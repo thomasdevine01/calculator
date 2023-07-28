@@ -1,10 +1,30 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import App from "./App";
-import "./index.css";
+import Home from './components/home/Home';
+import Calc from './Calc';
+import Navbar from './components/shared/Navbar';
+import './index.css';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById("root")
-);
+const App = () => {
+  return (
+      
+      <div className = 'container'>
+        <BrowserRouter>
+          <Navbar id = "nav" />
+            <Routes>
+              <Route path="src/components/home/Home.js" element={<Home />} />
+              <Route path="src/Calc.js" element={<Calc />}/>
+            </Routes>
+        </BrowserRouter>
+      </div>
+    
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <App />
+)
