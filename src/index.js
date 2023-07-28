@@ -14,6 +14,7 @@ const App = () => {
         <BrowserRouter>
           <Navbar id = "nav" />
             <Routes>
+              <Route index element={<Home />} />
               <Route path="src/components/home/Home.js" element={<Home />} />
               <Route path="src/Calc.js" element={<Calc />}/>
             </Routes>
